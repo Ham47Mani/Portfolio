@@ -1,0 +1,155 @@
+//======================================= Start Header ============================
+header{
+    background: url("../img/header/bg.png") no-repeat center center fixed;
+    @include bgCover;
+    color: #EEE;
+    overflow: hidden;
+    &:Before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(26, 30, 35, 0.85)
+    }
+    //--> Content
+    .content {
+        position: relative;
+        width: 100%;
+        top: 50%;
+        left: 0;
+        @include prefixAll(transform, translate(0%, -50%));
+        #large-header {
+            position: absolute;
+            width: 100%;
+            height: 100%
+        }
+        h2 {
+            letter-spacing: 1px;
+            line-height: 32px;
+            text-transform: uppercase;
+            margin-bottom: 20px
+        }
+        h1 {
+            font-size: 60px;
+            line-height: 80px;
+            margin-bottom: 16px;
+            color: #FF4E50;
+            span { color: #FC913A } 
+        }
+        p { color: #AAA; margin-bottom: 30px }
+    }
+    //--> Social Links
+    .social-icon {
+        a i {
+            position: relative;
+            color: #FFF;
+            font-size: 20px;
+            margin-left: 15px;
+            line-height: 40px;
+            width: 40px;
+            height: 40px;
+            &:before { position: relative; z-index: 1}
+            &:after {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                border: 1px solid #FFF;
+                border-radius: 3px; 
+                @include prefixAll(transform, rotate(45deg));
+                @include prefixAll(transition, all 1s ease-in-out);
+            }
+            &:hover:after {
+                border-color: #FF4E50;
+                background-color: #FC913A;
+                z-index: 0
+            }
+        }
+    }
+    //--> Icon Scroll
+    .iconScroll {
+        position: absolute;
+        left: 50%;
+        bottom: 40px;
+        border: 2px solid #FC913A;
+        border-radius: 16px;
+        height: 50px;
+        width: 30px;
+        .tiri {
+            position: relative;
+            border-radius: 10px;
+            background: #FF4E50;
+            width: 4px;
+            height: 10px;
+            top: 4px;
+            margin-left: auto;
+            margin-right: auto;
+            @include prefixAll(animation, animateScrolling 1s linear 0s infinite running);
+        }
+    }
+    //--> Style Header In Small Screen
+    @include SScreen {
+        .content {
+            h2 { font-size: 20px }
+            h1 { font-size: 30px }
+            p { font-size: 13px; margin: 0 20px 30px 20px }
+        }
+        .social-icon a i { width: 25px; height: 25px; font-size: 14px; line-height: 25px }
+    }
+}
+//--> Charge "animateScrolling" Animation
+@include keyframe (animateScrolling) {
+    0%   { top:5px;  opacity: 0 }
+	70%  { top:15px; opacity: 1 }
+	100% { top:25px; opacity: 0 }
+}
+//======================================= End Header ============================
+
+//======================================= Start Navbar ============================
+nav { 
+    border-bottom: 2px solid #EEE !important;
+    margin-bottom: 2px !important;
+    background-color: #FFF;
+    //--> Brand
+    img { margin-top: -10px }
+    //--> List
+    ul li {
+        a { color: #333; font-weight: 700 }
+        &.active a, a:hover {
+            color: #FF4E50;
+            background-color: transparent;
+            border-bottom: 2px solid #FC913A 
+        }
+    }
+    //--> Style Navbar In Small Screen
+    @include SScreen {
+        .navbar-toggle { 
+            background-color: #FF4E50; border-color: #FF4E50;
+            .icon-bar { background-color: #FFF }
+        }
+        &.navbar-nav {
+            & > .active a, .navbar-nav > li { margin-bottom: 1px }
+            & > .active a, .navbar-nav > li > a {
+                @include prefixAll(transition, all .5s ease-in-out);
+            }
+            & > .active a, .navbar-nav > li > a:hover {
+                background-color: #FF4E50;
+                color: #FFF;
+                border-bottom: none
+            }
+            & > li > a:hover { padding-left: 30px }
+            & > .active > a:hover { padding-left: 15px }
+        }
+        ul li a { color: #FFF }
+        .navbar-collapse {
+            background: #333;
+            position: relative;
+            z-index: 999999;
+        }
+    }
+}
+//======================================= End Navbar ============================

@@ -1,0 +1,49 @@
+//--> Style For All Button
+.btn{
+    border: 0;
+    border-bottom: 3px solid;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 28px;
+    padding: 8px 22px
+}
+
+//--> Style For Large Button
+.btn-lg, .btn-group-lg > .btn {
+    padding: 14px 20px;
+    font-size: 14px;
+    border-radius: 4px
+}
+
+//--> Style For Primary Button
+.btn-primary{
+    background-color: #FC913A;
+    border-color: rgba(51, 51, 51, 0.15)
+}
+.btn-primary:hover, 
+.btn-primary:focus, 
+.btn-primary.focus, 
+.btn-primary:active, 
+.btn-primary.active, 
+.open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #fd7f19;
+    border-color: #fd7f19
+}
+
+//--> Style For Info Button
+.btn-info{
+    background-color: #FF4E50;
+    border-color: rgba(51, 51, 51, 0.15)
+}
+
+.btn-info:hover, 
+.btn-info:focus, 
+.btn-info.focus, 
+.btn-info:active, 
+.btn-info.active, 
+.open>.dropdown-toggle.btn-info {
+    color: #fff;
+    background-color: #fd393b;
+    border-color: #fd393b
+}

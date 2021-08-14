@@ -1,0 +1,49 @@
+/*
+ * Template Name      : Hammani CV (-- I am X--)
+ * Template Version   : V 1.0.0
+ * Template Url       : .....................
+ * Language           : HTML5 | CSS3 |JavaScript
+ * Framework          : Bootstrap[CSS] | jQuery [JavaScript]
+ * Preprocesseur      : SaSS [CSS]
+ * Contact Me : Skaype   :- Boudraa.Hammani
+ *				Facebook :- Ham mani
+ *				Email    :- Ham47mani@gmail.com*/
+
+//--> Import Variables
+@import 'sass/helpers/variables';
+
+//--> Import Functions
+@import 'sass/helpers/functions';
+
+//--> Import Mixins
+@import 'sass/helpers/mixins';
+
+//--> Import Global Rules
+@import 'sass/helpers/helperClasses';
+
+//--> Import Global Rules
+@import 'sass/pages/global';
+
+//--> Import Grid System
+@import 'sass/layout/grid';
+
+//--> Import Components (Heading)
+@import 'sass/components/headings';
+
+//--> Import Components (Scroll To Top)
+@import 'sass/components/ScrollToTop';
+
+//--> Import Components (Write Loading)
+@import 'sass/components/writeLoading';
+
+//--> Import Components (Button)
+@import 'sass/components/buttons';
+
+//--> Import Header
+@import 'sass/layout/header';
+
+//--> Import Home Page
+@import 'sass/pages/homepage';
+
+//--> Import Footer
+@import 'sass/layout/footer';

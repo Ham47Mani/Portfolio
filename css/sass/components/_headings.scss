@@ -1,0 +1,40 @@
+//--> Style Of Main Black Heading
+.blackHeading {
+    margin-bottom: 70px;
+    font-size: 60px;
+    line-height: 60px;
+    position: relative;
+    color: #333;
+    &:after {
+        content: "";
+        background: url("../img/About/section-divider.png") no-repeat;
+        display: block;
+        height: 15px;
+        width: 150px;
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: -40px;
+        margin: 0 auto;
+    }
+    span { color: #FF4E50 }
+}
+
+//--> Style Of Main White Heading
+.whiteHeading {
+    position: relative;
+    margin-bottom: 110px;
+    letter-spacing: 3px;
+    font-size: 40px;
+    &:before {
+        content: "";
+        background: url("../img/About/section-divider.png") no-repeat;
+        height: 15px;
+        width: 120px;
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: -40px;
+        margin: 0 auto
+    }   
+}

@@ -1,0 +1,26 @@
+//--> Main Rules
+* { @include prefixAll(box-sizing, border-box); }
+
+//--> Make Style For Body
+body {
+    --main-Color: #{$mainColor};
+    font-family: "Roboto", "sans-serif";
+    font-weight: 300;
+    color: #333;
+    //overflow: hidden;
+    @include prefixAll(text-size-adjust, 100%);
+    /* This property for adjust text in phone for not make scroll with touch */
+    @include prefixAll(overflow-scrolling, touch);
+    /* property controls the application of anti-aliasing when fonts are rendered */
+    @include prefixAll(font-smoothing, antialiased !important);
+}
+
+//--> Make Style For All Links
+a { 
+    color: #FF4E50; cursor: pointer; text-decoration: none;
+    & > * { cursor: pointer; text-decoration: none }
+    &:focus, &:hover { color: #FF4E50; text-decoration: none }
+}
+
+//--> Typography
+h1, h2, h3, h4, h5, h6{ font-weight: 700; margin:0; text-transform: uppercase }

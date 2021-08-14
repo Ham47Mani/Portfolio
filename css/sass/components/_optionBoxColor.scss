@@ -1,0 +1,33 @@
+//======================================= Start Option Box Color ============================
+//--> A Simple Option Box Color
+.option-box {
+    position: fixed;
+    top: 120px;
+    left: 0;
+    color: #FFF;
+    z-index: 99999;
+    //--> Color Option
+    .color-option {
+        float: left;
+        background-color: #333;
+        padding: 10px;
+        width: 180px;
+        display: none;
+        border: 3px solid var(--main-Color);
+        ul {
+            li { width: 20px; height: 20px; display: inline-block; margin-right: 3px; cursor: pointer; }
+        }
+    }
+    //--> Gear
+    .gear-check { padding: 5px; cursor: pointer; background-color: var(--main-Color) }
+
+    //--> Style In Small Screen
+    @include SScreen {
+        .option-box {
+            .gear-check { font-size: 20px }
+        }
+    }
+    //--> Style In Medium Screen
+    //--> Style In Large Screen
+}
+//======================================= End Option Box Color ============================

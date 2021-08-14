@@ -1,0 +1,92 @@
+//======================================= Start Loading ============================
+/*
+ *================ HTML Loading ===================
+    <div class="loading">
+        <div id="fountainTextG">
+            <div id="fountainTextG_1" class="fountainTextG">L</div>
+            <div id="fountainTextG_2" class="fountainTextG">o</div>
+            <div id="fountainTextG_3" class="fountainTextG">a</div>
+            <div id="fountainTextG_4" class="fountainTextG">d</div>
+            <div id="fountainTextG_5" class="fountainTextG">i</div>
+            <div id="fountainTextG_6" class="fountainTextG">n</div>
+            <div id="fountainTextG_7" class="fountainTextG">g</div>
+            <div id="fountainTextG_8" class="fountainTextG"> </div>
+            <div id="fountainTextG_9" class="fountainTextG">.</div>
+            <div id="fountainTextG_10" class="fountainTextG">.</div>
+            <div id="fountainTextG_11" class="fountainTextG">.</div>
+        </div>
+    </div>
+ *================ HTML Loading ===================
+ */
+.loading{
+    position: absolute;
+    background-color: #222;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+    #fountainTextG{ 
+        width: 400px; margin: 220px auto;
+        .fountainTextG{
+            color:rgb(239,72,54);
+            font-family:Arial;
+            font-size:80px;
+            text-decoration:none;
+            font-weight:normal;
+            font-style:normal;
+            float:left;
+            @include prefixAll(animation-name, bounce_fountainTextG);
+            @include prefixAll(animation-duration, 2.09s);
+            @include prefixAll(animation-iteration-count, infinite);
+            @include prefixAll(animation-direction, normal);
+            @include prefixAll(transform, scale(.5));
+        }
+        #fountainTextG_1{
+            @include prefixAll(animation-delay, 0.75s);
+        }
+        #fountainTextG_2{
+            @include prefixAll(animation-delay, 0.9s);
+        }
+        #fountainTextG_3{
+            @include prefixAll(animation-delay, 1.05s);
+        }
+        #fountainTextG_4{
+            @include prefixAll(animation-delay, 1.2s);
+        }
+        #fountainTextG_5{
+            @include prefixAll(animation-delay, 1.35s);
+        }
+        #fountainTextG_6{
+            @include prefixAll(animation-delay, 1.5s);
+        }
+        #fountainTextG_7{
+            @include prefixAll(animation-delay, 1.64s);
+        }
+        #fountainTextG_8{
+            @include prefixAll(animation-delay, 1.79s);
+        }
+        #fountainTextG_9{
+            @include prefixAll(animation-delay, 1.94s);
+        }
+        #fountainTextG_10{
+            @include prefixAll(animation-delay, 2.09s);
+        }
+        #fountainTextG_11{
+            @include prefixAll(animation-delay, 2.24s);
+        }
+    }
+}
+
+//--> Charge Animation
+@include keyframe(bounce_fountainTextG) {
+    0%{
+		transform:scale(1);
+		color:rgb(239,72,54);
+	}
+	100%{
+		transform:scale(.5);
+		color:rgb(26,25,26);
+	}
+}
+//======================================= End Loading ============================

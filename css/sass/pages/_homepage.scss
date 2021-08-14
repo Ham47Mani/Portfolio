@@ -1,0 +1,820 @@
+//======================================= Start About ============================
+//--> My Objective & What I Do
+.about {
+    padding-top: 120px;
+    padding-bottom: 100px;
+    border-top: 2px solid #EEE;
+    .section_margin { margin-bottom: 40px }
+    h3 { margin-bottom: 30px }
+    .lead { 
+        font-size: 16px;
+        font-weight: 400;
+        color: #999;
+        line-height: 1.8
+    }
+    //--> Costomize List
+    .aboutMe {
+        ul { 
+            margin: 10px ; display: inline-block; color: #999;
+            li{
+                position: relative;
+                font-size: 18px;
+                line-height: 32px;
+                width: 50%;
+                float: left;
+                &:before {
+                    content: "\f00c";
+                    font-family: fontawesome;
+                    color: #FF4E50;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+    //--> Signateur
+    .my-signature{
+        margin-bottom: 45px;
+        img { width: inherit }
+    }
+    //--> Button Download
+    .download-button a { 
+        margin-right: 20px; color: #FFF;
+        i { margin-right: 10px }
+    }
+    //--> My Info
+    .myInfo { 
+        position: relative;
+        border: 1px solid #EEE;
+        padding: 10px 5px;
+        border-radius: 0 0 10px 10px;
+        &:after{
+            content: "";
+            border-bottom: 7px solid #EEEEEE;
+            position: absolute;
+            bottom: -7px;
+            left: 1px ;
+            width: 100%;
+            border-radius: 10px;
+            height: 30px;
+        }
+        .photo { 
+            position: relative;
+            background: url("../img/About/photo-frame.png") bottom center no-repeat;
+            background-size: contain;
+            img { position: relative; z-index: -1; width: 100% }
+        }
+        ul { 
+            padding: 35px 20px;
+            li {
+                padding: 10px 0;
+                font-size: 16px;
+                border-bottom: 1px solid #EEE;
+                &:last-child { border-bottom: none }
+                span { font-weight: bold }
+            }
+        }
+    }
+    //--> Style Of About Section In Small Screen
+    @include SScreen {
+        .myInfo { margin-bottom: 40px }
+        .aboutMe ul li { font-size: 12px }
+        .download-button a { margin-bottom: 25px }
+    }
+    //--> Style Of About Section In Medium Screen
+    @include MScreen {
+        .myInfo { margin-bottom: 40px }
+        .aboutMe ul li { font-size: 12px }
+        .download-button a { margin-bottom: 25px }
+    }
+}
+//======================================= End About ============================
+
+//======================================= Start Video Section ============================
+.video { 
+    color: #EEE;
+    padding-top: 120px;
+    padding-bottom: 100px;
+    background: url("../img/videoSection/video-bg.jpg") no-repeat center center fixed;
+    position: relative;
+    .container { min-height: 300px }
+    h2 { 
+        font-size: 40px; position: relative;
+        &:after {
+            content: "";
+            position: absolute;
+            left: 37%;
+            bottom: -20px;
+            width: 25%;
+            border-bottom: 1px solid #FF4E50
+        }
+    }
+    .container-video {
+        max-width: 80%;
+        margin: 40px auto
+    }
+}
+//======================================= End  Video Section ============================
+
+//======================================= Start Resume ============================
+.resumeSection {
+    padding-top: 120px;
+    padding-bottom: 100px;
+    /*--> Resume Timeline <--*/
+    //--> Resume Title
+    .resume-title { margin-bottom: 40px }
+    //--> Resume
+    .resume { 
+        position: relative;
+        &:before {
+            content: "";
+            position: absolute;
+            top: -8px;
+            width: 10px;
+            height: 10px;
+            background-color: #e1e1e1;
+            left: 50%;
+            margin-left: -6px;
+            @include prefixAll(transform, rotate(45deg));
+        }
+        //--> Timeline
+        .timeline { 
+            position: relative;
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: 2px;
+                margin-left: -1.5px;
+                background-color: #e1e1e1;
+                left: 50%
+            }
+            &after {
+                content: "";
+                position: absolute;
+                bottom: -8px;
+                width: 10px;
+                height: 10px;
+                background-color: #e1e1e1;
+                left: 50%;
+                margin-left: -6px;
+                @include prefixAll(transform, rotate(45deg));
+            }
+            li {
+                margin-bottom: 15px;
+                min-height: 100px;
+                position: relative;
+                &:after, &:before { content: " "; display: table }
+                &:after { clear: both }
+                //--> Posted Date
+                .posted-date {
+                    left: 50%;
+                    width: 120px;
+                    margin-left: -60px;
+                    margin-top: 28px;
+                    position: absolute;
+                    text-align: center;
+                    background-color: #fff;
+                    .month {    
+                        font-size: 18px;
+                        line-height: 20px;
+                        font-weight: 700;
+                        display: block;
+                        color: #2c3e50;
+                        top: 0
+                    }
+                }
+                //--> Timeline Panel
+                .timeline-panel {
+                    text-align: right;
+                    float: left;
+                    width: 43%;
+                    position: relative;
+                    border: 1px solid #EEE;
+                    &:before, &:before {
+                        content: "";
+                        top: 25px;
+                        position: absolute;
+                        border-top: 10px solid transparent;
+                        border-bottom: 10px solid transparent
+                    }
+                    &:before {
+                        right: auto;
+                        border-right-width: 15px;
+                        border-left-width: 0;
+                        left: 100%;
+                        border-left: 12px solid #ECECEC;
+                        @include prefixAll(transition, all 400ms);
+                    }
+                    &:hover:before { border-left: 12px solid #FC913A }
+                    &:after {
+                        right: auto;
+                        border-right-width: 14px;
+                        border-left-width: 0;
+                        left: 100%;
+                        margin-left: -2px;
+                        border-left: 12px solid #FFFFFF;
+                        @include prefixAll(transition, all 400ms);
+                    }
+                    &:hover:after { border-left: 12px solid #FC913A }
+                    //--> Timeline Content
+                    .timeline-content { 
+                        position: relative;
+                        padding: 24px;
+                        background-color: #fff;
+                        @include prefixAll(transition, all 400ms);
+                        &:after{
+                            border: 1px solid #eee;
+                            width: 100%;
+                            position: absolute;
+                            content: "";
+                            bottom: -3px;
+                            height:10px;
+                            left: 0;
+                            z-index: -1;
+                        }
+                        &:hover { background: #FC913A; color: #fff }
+                        //--> Timeline Heading
+                        .timeline-heading {
+                            h3 { font-size: 20px; line-height: 28px }
+                            span{ display: block; font-weight: 700; margin-bottom: 20px }
+                        }
+                        //--> Timeline Body
+                        .timeline-body p { font-weight: 300 }
+                    }
+                }
+                &.timeline-inverted {
+                    .timeline-panel {
+                        float: right;
+                        text-align: left;
+                        &:before {
+                            border-right: 12px solid #ECECEC;
+                            @include prefixAll(transition, all 400ms);
+                            right: auto;
+                            left: -13px;
+                            border-right-width: 15px;
+                            border-left-width: 0;
+                        }
+                        &:hover:before {
+                            border-right: 12px solid #FC913A;
+                            border-left: 0
+                        }
+                        &:after {
+                            margin-right:-2px;
+                            border-right: 12px solid #FFFFFF;
+                            @include prefixAll(transition, all 400ms);
+                            right: auto;
+                            left: -10px;
+                            border-right-width: 14px;
+                            border-left-width: 0;
+                        }
+                        &:hover:after {
+                            border-right: 12px solid #FC913A;
+                            border-left: 0
+                        }
+                    }
+                }
+                .timeline-panel:after, &.timeline-inverted .timeline-panel:after {
+                    content: "";
+                    top: 25px;
+                    position: absolute;
+                    border-top: 10px solid transparent;
+                    border-bottom: 10px solid transparent
+                }
+            }
+        }
+    }
+    //---> Experience
+    .Experience { margin-top: 40px }
+    
+    //--> Style Of Resume Section In Small Screen
+    @include SScreen {
+        .resume .timeline:before, .resume:before { left: 1px !important; bottom: -160px !important }
+        .resume .timeline:after { left: 2px !important; bottom: -170px !important }
+        .resume-experience .timeline:before, .resume-experience:before { bottom: -330px !important }
+        .resume-experience .timeline:after { bottom: -340px !important }
+        .posted-date { left: 20% !important; position: relative !important; background: transparent !important; width: 100% !important }    
+        .posted-date .month { 
+            float: left !important; 
+            margin-top: 15px !important;  
+        }
+        .timeline>li .timeline-panel { width: 100% !important; border: none !important }
+        .timeline-content { text-align: left !important; padding: 20px !important; background: transparent !important }
+
+        .timeline-content:after, .resume .timeline li:before, .resume .timeline li:after,.timeline>li .timeline-panel:before, .timeline>li .timeline-panel:after {
+            content: none !important 
+        }
+
+        .timeline>li.timeline-inverted>.timeline-panel:after, .timeline>li.timeline-inverted>.timeline-panel:before { content: none }
+        .timeline>li .timeline-content:hover {
+            background: transparent !important;
+            color: #333 !important 
+        }
+    }
+    //--> Style Of Resume Section In Medium Screen
+    @include MScreen {
+        .posted-date .month { font-size: 14px }
+    }
+}
+//======================================= End Resume ============================
+
+//======================================= Start Skills Section ============================
+.skills { 
+    padding-top: 120px;
+    padding-bottom: 100px;
+    background-color: #1a1e23;
+    color: #EEE;
+    //--> Skills Progress
+    .skill-progress { 
+        position: relative;
+        //--> Skills Title
+        .skill-title { 
+            width: 25%; float: left;
+            h3 { 
+                font-size: 18px;
+                font-weight: 400;
+            }
+        }
+    }
+    //--> Progress
+    .progress {
+        height: 20px;
+        margin-bottom: 50px;
+        background-color: #3a4149;
+        border-radius: 8px;
+        box-shadow: none;
+        width: 75%;
+    }
+    .progress-bar { 
+        background-color: #FC913A;
+        span { 
+            opacity: .5;
+            position: absolute;
+            top: -40px;
+            color: #FFF;
+            font-weight: bold;
+            width: 40px;
+            height: 30px;
+            left: 22%;
+            line-height: 30px;
+            border-radius: 5px;
+            background: #FC913A;
+            &:before {
+                position: absolute;
+                content: "";
+                width: 0;
+                height: 0;
+                border-left: 8px solid transparent;
+                border-right: 8px solid transparent;
+                border-top: 10px solid #FC913A;
+                bottom: -10px;
+                left: 65%;
+                margin-left: -14px;
+            }
+        }
+    }
+    .progress-bar span, .progress .progress-bar.six-sec-ease-in-out {
+        @include prefixAll(transition,  all 2s ease-in-out);
+    }
+    //--> Skills Circle Chart
+    .skill-circle h3 { margin-top: 30px }
+    .chart {
+        position: relative;
+        display: inline-block;
+        width: 140px;
+        height: 140px;
+        margin: 40px auto;
+        text-align: center;
+        color: #FC913A;
+        canvas {
+            position: absolute; 
+            top: 0; 
+            left: 0
+        }
+        .chart-text h3{ font-size: 22px }
+    }
+    .percent {
+        display: inline-block;
+        margin: auto;
+        line-height: 140px;
+        z-index: 2;
+        font-size: 25px;
+        font-weight: 500;
+        text-align: center;
+        &:after { content: '%' }
+    }
+    .chart-text span {
+        font-size: 18px;
+        font-weight: 400;
+        text-transform: capitalize;
+        display: block;
+        margin-top: 20px;
+        color: #EEE
+    }
+
+    .angular {
+        margin-top: 100px;
+        .chart { margin-top: 0 }
+    }
+    
+    //--> Style Of Skills Section In Small Screen
+    @include SScreen {
+        .skill-title h3 { font-size: 14px; margin-top: 3px }
+        .progress-bar span { 
+            width: 25px; 
+            height: 20px; 
+            line-height: 20px;
+            top: -25px;
+            font-size: 10px
+        }
+        .progress-bar span:before {
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 8px solid #FC913A;
+            bottom: -8px;
+            margin-left: -10px
+        }
+    }
+}
+//======================================= End Skills Section ============================
+
+//======================================= Start Works Section ============================
+.works {
+    padding-top: 120px;
+    padding-bottom: 100px;
+    background-color: #f7f7f7;
+    //--> Costume Shuffle
+    .list-inline { 
+        margin: 0 0 35px;
+        li a {
+            color: #FF4E50;
+            display: block;
+            text-transform: uppercase;
+            padding: 10px 15px;
+            border-radius: 6px;
+            transition: inherit;
+            font-weight: 400;
+            &.active, &:hover {
+                position: relative;
+                background: #FF4E50;
+                color: #fff;
+                border-bottom: 3px solid rgba(0, 0, 0, 0.15);
+            }
+            &.active::after, &:hover::after{
+                position: absolute;
+                content: "";
+                width: 0;
+                height: 0;
+                border-left: 15px solid transparent;
+                border-right: 15px solid transparent;
+                border-top: 17px solid #FF4E50;
+                bottom: -15px;
+                left: 50%;
+                margin-left: -15px
+            }
+        }
+    }
+    //--> Portfolios Item
+    .portfolio-item {
+        display: none;
+        padding-right: 5px;
+        padding-left: 5px;
+        min-height: 235px;
+        .portfolio-bg {
+            background: #fff;
+            padding: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #eee;
+            border-bottom: 3px double #eee;
+            .portfolio {
+                position: relative;
+                overflow: hidden;
+                max-height: 250px
+            }
+        }
+    }
+    .tt-overlay {
+        position: absolute;
+        background-color: rgba(26, 30, 31, 0.85);
+        width: 100%;
+        height: 100%;
+        opacity: 0
+    }
+    .portfolio-info, .links, .links a i, .links a i::after, .tt-overlay {
+        @include prefixAll(transition, all 400ms);
+    }
+    .links {
+        width: 90px;
+        height: 40px;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        margin-top: -20px;
+        margin-left: -45px;
+        opacity: 0;
+        @include prefixAll(transform, translate(0,-50px));
+        a {
+            &:hover i { color:  #fff }
+            &:hover i::after { background-color: #FF4E50 }
+            i {
+                position: relative;
+                color: #FF4E50;
+                font-size: 16px;
+                margin: 0 13px;
+                z-index: 100;
+                &::after{
+                    position: absolute;
+                    content: "";
+                    left: -7px;
+                    top: -7px;
+                    width: 30px;
+                    height: 30px;
+                    border: 1px solid #FF4E50;
+                    z-index: -1;
+                    border-radius: 3px;
+                    @include prefixAll(transform, rotate(45deg));
+                }
+            }
+        }
+    }
+    //--> Portfolios Info
+    .portfolio-info {
+        position: absolute;
+        bottom: -100%;
+        left: 0;
+        background-color: #FF4E50;
+        color: #fff;
+        height: 45px;
+        width: 100%;
+        text-align: center;
+        h3 {
+            font-size: 14px;
+            line-height: 45px;
+            font-weight: 700;
+            margin: 0
+        }
+    }
+    .portfolio:hover .tt-overlay, .portfolio:hover .links {
+        opacity: 1;
+        @include prefixAll(transform, translate(0,0));
+    }
+    .portfolio:hover .portfolio-info{ bottom: 0 }
+    //--> Popup FadeIn Effect
+    .mfp-with-zoom .mfp-container, .mfp-with-zoom.mfp-bg {
+        opacity: 0;
+        @include prefixAll(backface-visibility, hidden);
+        @include prefixAll(transition, all 0.3s ease-out);
+    }
+
+    .mfp-with-zoom.mfp-ready .mfp-container { opacity: 1 }
+
+    .mfp-with-zoom.mfp-ready.mfp-bg { opacity: 0.8 }
+
+    .mfp-with-zoom.mfp-removing .mfp-container, 
+    .mfp-with-zoom.mfp-removing.mfp-bg { opacity: 0 }
+}
+//======================================= End Works Section ============================
+
+//======================================= Start Fact Section ============================
+.facts {
+    background: url(../img/facts/run.gif) no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover;
+    color: #fff;
+    .tt-overlay-bg {
+        background: rgba(26, 30, 35, 0.9);
+        padding: 110px 0
+    }
+    .count-wrap {
+        i {
+            font-size: 64px;
+            margin-bottom: 25px
+        }
+        h3 {
+            font-size: 50px;
+            line-height: 28px;
+            margin-bottom: 20px
+        }
+        p {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0
+        }
+    }
+    
+    //--> Style Of Fact Section In Small Screen
+    @include SScreen {
+        .facts-items { margin-bottom: 40px }
+    }
+}
+//======================================= End Fact Section ============================
+
+//======================================= Start Web Design Work Section ============================
+.web-design { 
+    padding-top: 120px; padding-bottom: 100px;
+    //--> Customaze post
+    .post {
+        padding: 4px;
+        border: 1px solid #eee;
+        border-bottom: 3px double #eee;
+        margin-bottom: 30px;
+        //--> Figure
+        .figure { 
+            position: relative; border-bottom: 1px solid #EEE;
+            i {
+                position: absolute;
+                bottom: -8px;
+                right: 30px;
+                color: #fff;
+                font-size: 18px;
+                z-index: 100;
+                &:after {
+                    position: absolute;
+                    content: "";
+                    left: -12px;
+                    top: -10px;
+                    width: 40px;
+                    height: 40px;
+                    background-color: #FF4E50;
+                    z-index: -1;
+                    border-radius: 3px;
+                    @include prefixAll(transform, rotate(45deg));
+                }
+            }
+        }
+    }
+    .post-img { 
+        max-height: 250px; overflow: hidden;
+        img{
+            opacity: 0.8;
+            @include prefixAll(transition, all 0.5s linear);
+            &:hover {
+                opacity: 1;
+                @include prefixAll(transform, scale(1.05));
+            }
+        }
+    }
+    //--> Post Header
+    .post-header { 
+        padding: 0 12px; margin-top: 20px;
+    }
+    .post-meta .the-category a {
+        font-size: 12px;
+        line-height: 28px;
+        font-weight: 300
+    }
+    .post-header-title {
+        font-size: 18px;
+        line-height: 25px;
+        font-weight: 700;
+        a { 
+            color: #282828;
+            &:hover{ color: #FF4E50 }
+        }
+    }
+    .post-header-meta { 
+        color: #afafaf;
+        ul { 
+            margin-bottom: 10px;
+            li { 
+                padding: 0 10px;
+                a {
+                    display: inline-block;
+                    color: #BBB;
+                    font-weight: 400;
+                    &:hover{ color: #FF4E50 }
+                }
+            }
+        }
+    }
+    .blog-more { margin-top: 40px }
+    //--> Make Icon
+    .the-author:before { content: "\f044" }
+    .the-time:before { content: "\f133" }
+    .the-share:before { content: "\f1e0" }
+    .the-comments:before { content: "\f0e6" }
+    .the-author, .the-time, .the-share,  .the-comments { position: relative; padding-left: 20px }
+    .the-author:before, .the-time:before, .the-share:before, .the-comments:before{
+        font-family: FontAwesome;
+        position: absolute;
+        left: 0;
+    }
+    .hidden-post { display: none }
+}
+//======================================= End Web Design Work Section ============================
+
+//======================================= Start Hire Section ============================
+.hire {
+    background: url(../img/hire/bg.png) no-repeat top center;
+    background-attachment: fixed;
+    background-size: cover;
+    color: #fff;
+    h2 { font-size: 36px; margin-bottom: 40px }
+    .hire-bg {
+        padding: 110px 0;
+        @include prefixAll(background, radial-gradient(rgba(255, 78, 80, .5), rgba(252, 145, 56, .5), rgba(255, 78, 80, .5)));
+    }
+    .btn {
+        padding: 9px 54px;
+        background: transparent;
+        border: 1px solid #fff;
+        color: #fff
+    }
+}
+//--> Make Nice Hover To Button
+/* Shutter In Horizontal */
+.hvr-shutter-in-horizontal {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  background: transparent;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hvr-shutter-in-horizontal:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #FFF;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+.hvr-shutter-in-horizontal:hover, .hvr-shutter-in-horizontal:focus, .hvr-shutter-in-horizontal:active {
+    color: #FF4E50;
+}
+.hvr-shutter-in-horizontal:hover:before, .hvr-shutter-in-horizontal:focus:before, .hvr-shutter-in-horizontal:active:before {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+//======================================= End Hire Section ============================
+
+//======================================= Start Contact Us Section ============================
+.contactus { 
+    padding-top: 120px; padding-bottom: 100;
+    //--> Contact Us Form
+    .contactus-form {
+        h4 { margin-bottom: 40px }
+        input { height: 45px }
+        .form-control {
+            background-color: #f7f7f7;
+            border: 1px solid #e8e8e8;
+            border-radius: 10px;
+            box-shadow: none;
+            &:focus { border-color: #FC913A }
+        }
+        textarea { height: 150px; resize: none }
+        button { padding: 8px 30px; margin-top: 20px }
+    }
+    //--> Info
+    div > i{
+        float: left;
+        font-size: 45px;
+        margin-right: 20px;
+    }
+    .lead { font-size: 14px }
+    .lead, .contact-number {
+        overflow: hidden;
+        line-height: 30px;
+        font-weight: 400;
+        margin-bottom: 45px
+    }
+    //--> Map
+    .location-map {
+        padding: 4px;
+        border: 1px solid #eee;
+        border-bottom: 3px double #eee;
+    }
+    .map-canvas {
+        height: 350px;
+    }
+    
+    //--> Style Of Contact Us Section In Small Screen
+    @include SScreen {
+        .contactus-form { margin-bottom: 40px }
+    }
+    //--> Style Of Contact Us Section In Medium Screen
+    @include MScreen {
+        .contactus-form { margin-bottom: 40px }
+    }
+}
+//======================================= End Contact Us Section ============================

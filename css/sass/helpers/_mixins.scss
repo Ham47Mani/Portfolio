@@ -1,0 +1,83 @@
+// ===================== Media Queries Mixins =====================
+//--> Extra Small Screen
+@mixin XsScreen { @media (max-width: 600px) { @content; } }
+
+//--> Small Screen
+@mixin SScreen { @media (max-width: 767px) { @content; } }
+
+//--> Mediume Screen
+@mixin MScreen { @media (min-width: 768px) and (max-width: 991px) { @content; } }
+
+//--> Large Screen
+@mixin LScreen { @media (min-width: 992px) and (max-width: 1190px) { @content; } }
+
+//--> Extra Large Screen
+@mixin XlScreen { @media (min-width: 1200px) { @content; } }
+// ===================== Media Queries Mixins =====================
+
+// ===================== Overlay Mixins =====================
+//--> A Simple Overlay Mixin Without Background Parameter
+@mixin overlay {
+    position: absolute;;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+//--> Overlay Mixin With Background & Opacity Parameter
+@mixin overlay($bgColor, $opacity) {
+    position: absolute;;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($bgColor, $opacity);
+}
+// ===================== Overlay Mixins =====================
+
+// ===================== Prefixer Mixins =====================
+//--> Prefixer Mixin Make Prefix For All Browsers
+@mixin prefixAll($property, $value) {
+    #{"-webkit-" + $property}: $value;
+    #{"-moz-" + $property}: $value;
+    #{"-ms-" + $property}: $value;
+    #{"-o-" + $property}: $value;
+    #{$property}: $value;
+}
+
+//--> Prefixer Mixin Make Prefix To Some Browsers
+@mixin prefix($property, $value, $prefixes: ()) {
+    @each $prefix in $prefixes {
+        #{"-" + $prefix + "-" + $property}: $value;
+    }
+    #{$property}: $value;
+}
+// ===================== Prefixer Mixins =====================
+
+// ===================== Animation Mixins =====================
+//--> KeyFrame Mixin For Make Animate With All Prefixes
+@mixin keyframe($AnimationName) {
+    @-webkit-keyframes #{$AnimationName} { @content; }
+    @-moz-keyframes #{$AnimationName} { @content; }
+    @-ms-keyframes #{$AnimationName} { @content; }
+    @-o-keyframes #{$AnimationName} { @content; }
+    @keyframes #{$AnimationName} { @content; }
+}
+// ===================== Animation Mixins =====================
+
+// ===================== Opacity For IE =====================
+//--> Make Opacity In IE
+@mixin opacity ($value) {
+    zoom: 1;
+    filter: alpha(opacity = ($value * 100));
+    opacity: $value;
+}
+// ===================== Opacity For IE =====================
+
+// ===================== Background =====================
+//--> Background Cover
+@mixin bgCover {
+    @include prefixAll(background-size, cover);
+}
+// ===================== Background =====================

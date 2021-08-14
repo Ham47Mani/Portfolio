@@ -1,0 +1,16 @@
+//======================================= Start Scroll To Top ============================
+/*-------------- HTML Code --------------------
+    <div class="scrollTop">
+        <a href="#home"><i class="fa fa-angle-double-up"></i></a>
+    </div>
+ *-------------- HTML Code --------------------
+ */
+.scrollTop {
+    display: none;
+    position: fixed;
+    right: 35px;
+    bottom: 20px;
+    z-index: 999999;
+    a { font-size: 40px; text-align: center }
+}
+//======================================= End Scroll To Top ============================
